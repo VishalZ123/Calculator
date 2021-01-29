@@ -1,0 +1,141 @@
+<html>
+<head>
+<link rel="shortcut icon" href="https://cdn.iconscout.com/icon/free/png-512/calculator-744-474995.png" />
+<script>
+function equat()
+{
+if(document.calc.field.value==""){
+document.write('<img src="https://cdn.pixabay.com/photo/2014/04/02/10/34/warning-303898_1280.png" height="50" width="50" />Please Enter Some Values.<br /><a href="">Back To The Calculator.</a>')
+}
+else {document.calc.fi.value='='+eval(document.calc.field.value)}
+}
+</script>
+<script>
+function move(){
+if (calc.field.value==""){
+calc.ans.value='No values entered.'}
+else {calc.ans.value=eval(calc.field.value)}
+}
+</script>
+<script>
+function back(){
+calc.field.value=calc.field.value.slice(0,-1);
+}
+</script>
+<script>
+function ver()
+{
+if (his.in.value==""){his.in.value='No History Yet.'}
+}</script>
+<script>
+function verinv(){
+if (his.in.value=="No History Yet."){his.in.value=''}
+}</script>
+<script>
+function divide(){
+var a=document.calc.field.value;
+var b=a.substr(-1,1);
+if (b=="+"||b=="-"||b=="*"||b=="/"){
+document.calc.field.value=a.slice(0,-1)+'/'
+}
+else {document.calc.field.value=a+'/'}
+}
+</script>
+<script>
+function mul(){
+var a=document.calc.field.value;
+var b=a.substr(-1,1);
+if (b=="+"||b=="-"||b=="*"||b=="/"){
+document.calc.field.value=a.slice(0,-1)+'*'
+}
+else {document.calc.field.value=a+'*'}
+}
+</script>
+<script>
+function minus(){
+var a=document.calc.field.value;
+var b=a.substr(-1,1);
+if (b=="-"||b=="*"||b=="/"){
+document.calc.field.value=a.slice(0,-1)+"-"
+}
+else {document.calc.field.value=a+"-"}
+}
+</script>
+<script>
+function add(){
+var a=document.calc.field.value;
+var b=a.substr(-1,1);
+if (b=="+"||b=="-"||b=="*"||b=="/"){
+document.calc.field.value=a.slice(0,-1)+'+'
+}
+else {document.calc.field.value=a+'+'}
+}
+</script>
+<script>
+function point(){
+var a=document.calc.field.value;
+var b=a.substr(-1,1);
+if (b=="."){
+document.calc.field.value=a.slice(0,-1)+'.'
+}
+else {document.calc.field.value=a+'.'}
+}
+</script>
+<script>
+function clhi(){
+if (document.his.in.value==""){alert('Nothing To Clear.')}
+
+else {var d=confirm('Are You Sure To Clear History?');
+if (d==true){document.his.in.value=""}
+}
+}
+</script>
+<noscript><center><b><i><font size="5">Please enable your browser to use javascript.<br /></font></i></b></center></noscript>
+<title>
+Calculator
+</title>
+</head>
+<body onkeydown="move();" onmousemove="move();"><form name="calc">
+<table border="2" align="center" bgcolor="#C0C0C0" cellspacing="0" onmousemove="calc.ans.value=eval(calc.field.value)">
+<tr><td align="center" colspan="4">
+<input id="field" style="width:200px; text-align:right; height:30px; font-size:large; background-color:white;" disabled="disbaled" />
+</td>
+</tr>
+<tr><td align="center" colspan="4" onclick="alert('You Can Not Enter Value Here.')">
+<input name="fi" style="width:200; text-align:right; height:30px; font-size:large; background-color:white;" disabled="disabled" />
+</td>
+</tr>
+<tr><td colspan="4" align="right"><input type="button" value="Backspace" onclick="back();" dir="rtl"/></td></tr>
+<tr align="center" valign="middle"><td><input type="button" onclick="calc.field.value=calc.field.value+'7'" value="7" title="7" /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'8'" value="8" title="8" /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'9'" value="9" title="9" /></td>
+<td><input type="button" onclick="divide();" value="/" title="Divide" /></td>
+</tr>
+<tr align="center"><td><input type="button" onclick="calc.field.value=calc.field.value+'4'" value="4" title="4" /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'5'" value="5" title="5" /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'6'" value="6" title="6" /></td>
+<td><input type="button" onclick="mul();" value="*" title="Multiply" /></td>
+</tr>
+<tr align="center"><td><input type="button" onclick="calc.field.value=calc.field.value+'1'" value="1" title="1" /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'2'" value="2" title="2" /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'3'" value="3" title="3" /></td>
+<td><input type="button" onclick="minus();" value="-" title="Subtract" /></td>
+</tr>
+<tr align="center"><td><input type="button" onclick="point();" value="." title="." /></td>
+<td><input type="button" onclick="calc.field.value=calc.field.value+'0'" value="0" title="0" /></td>
+<td><input type="reset" Value="C" title="Clear" onclick="his.in.value=his.in.value+'                              '+calc.field.value+calc.fi.value" /></td>
+<td rowspan="2"><input type="button" onclick="add();" value="+" title="Add" style="height:50;" /></td></tr>
+<tr align="center"><td><input type="button" value="Square" onclick="calc.fi.value='^2='+calc.field.value*calc.field.value" title="Square" /></td>
+<td><input type="button" value="Cube" onclick="calc.fi.value='^3='+calc.field.value*calc.field.value*calc.field.value" title="Cube" /></td>
+<td><input type="button" value="Pie" onclick="calc.field.value=calc.field.value+'3.14'" /></td>
+</tr>
+<tr><td colspan="4" align="center"><input type="button" size="19" style="width:200;" onclick="equat();" value="=" title="Calculate" onerror="alert('Some Promblem in the Values.')" /></td>
+</tr><tr><td colspan="4">
+<input name="ans" style="width:200;" disabled="disabled" /></td></tr>
+</table>
+</form>
+<div style="border:5px; margin-left:780px; margin-top:-210px;">HISTORY
+<form name="his" onmouseenter="ver();" onmouseout="verinv();"><textarea rows="10" cols="29" name="in" disabled="disabled" style="background-color:white;"></textarea><br /><input type="button" value="Clear History" name="button" title="Clear History" onclick="clhi();" /></form>
+</div>
+</body>
+</html>
